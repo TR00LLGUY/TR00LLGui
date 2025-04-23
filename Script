@@ -1,121 +1,119 @@
--- Crear ScreenGui
+-- Script de la GUI de TR00LL
 local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "TR00LLGui"
-ScreenGui.ResetOnSpawn = false
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+ScreenGui.Name = "TR00LL_GUI"
 
--- Crear Frame principal
-local Frame = Instance.new("Frame")
-Frame.Name = "MainFrame"
-Frame.Size = UDim2.new(0, 400, 0, 600)
-Frame.Position = UDim2.new(0, 20, 0.5, -300)
-Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Frame.BorderColor3 = Color3.fromRGB(255, 0, 0)
-Frame.BorderSizePixel = 4
-Frame.Parent = ScreenGui
+-- Marco principal
+local mainFrame = Instance.new("Frame")
+mainFrame.Parent = ScreenGui
+mainFrame.Size = UDim2.new(0, 400, 0, 600)
+mainFrame.Position = UDim2.new(0.5, -200, 0.5, -300)
+mainFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 
--- Título
-local Title = Instance.new("TextLabel")
-Title.Parent = Frame
-Title.Size = UDim2.new(1, 0, 0, 50)
-Title.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Title.Text = "TR00LL GUI"
-Title.TextColor3 = Color3.fromRGB(255, 0, 0)
-Title.Font = Enum.Font.SourceSansBold
-Title.TextSize = 28
-Title.BorderSizePixel = 0
+-- Título de la GUI
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Parent = mainFrame
+titleLabel.Size = UDim2.new(1, 0, 0, 50)
+titleLabel.Position = UDim2.new(0, 0, 0, 0)
+titleLabel.Text = "TR00LL GUI"
+titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+titleLabel.TextSize = 30
+titleLabel.Font = Enum.Font.SourceSansBold
+titleLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 
--- Contenedor para los botones (sin scroll)
-local ButtonContainer = Instance.new("Frame")
-ButtonContainer.Name = "ButtonContainer"
-ButtonContainer.Size = UDim2.new(1, 0, 1, -60)
-ButtonContainer.Position = UDim2.new(0, 0, 0, 60)
-ButtonContainer.BackgroundTransparency = 1
-ButtonContainer.BorderSizePixel = 0
-ButtonContainer.Parent = Frame
+-- Contenedor para los botones
+local buttonFrame = Instance.new("Frame")
+buttonFrame.Parent = mainFrame
+buttonFrame.Size = UDim2.new(1, 0, 1, -50)
+buttonFrame.Position = UDim2.new(0, 0, 0, 50)
+buttonFrame.BackgroundTransparency = 1
 
--- GridLayout para 4 botones por fila
-local UIGridLayout = Instance.new("UIGridLayout")
-UIGridLayout.CellSize = UDim2.new(0.25, -10, 0, 50)
-UIGridLayout.CellPadding = UDim2.new(0, 10, 0, 10)
-UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayout.Parent = ButtonContainer
+-- UIGridLayout para organizar los botones
+local gridLayout = Instance.new("UIGridLayout")
+gridLayout.Parent = buttonFrame
+gridLayout.CellSize = UDim2.new(0, 90, 0, 40)
+gridLayout.CellPadding = UDim2.new(0, 10, 0, 10)
+gridLayout.FillDirection = Enum.FillDirection.Horizontal
+gridLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
--- Función para crear botones
-local function createButton(text, callback)
+-- Función para crear un botón
+local function createButton(name, func)
     local button = Instance.new("TextButton")
-    button.Text = text
-    button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)  -- Fondo negro
-    button.TextColor3 = Color3.fromRGB(255, 0, 0)  -- Texto rojo
-    button.BorderColor3 = Color3.fromRGB(255, 0, 0)  -- Borde rojo
-    button.BorderSizePixel = 2
+    button.Parent = buttonFrame
+    button.Text = name
+    button.Size = UDim2.new(0, 90, 0, 40)
+    button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    button.TextColor3 = Color3.fromRGB(255, 0, 0)
     button.Font = Enum.Font.SourceSansBold
     button.TextSize = 20
-    button.Parent = ButtonContainer
-    button.MouseButton1Click:Connect(callback)
+
+    button.MouseButton1Click:Connect(func)
 end
 
--- Crear todos los botones funcionales
+-- Botones
 createButton("GhostHub", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    -- Ejecutar el script del GhostHub
 end)
 
 createButton("SCP 096 FE", function()
-    loadstring(game:HttpGet("https://pastefy.app/YsJgITXR/raw"))()
+    -- Ejecutar el script de SCP 096 FE
 end)
 
 createButton("Forsaken OP", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ivannetta/ShitScripts/main/forsaken.lua"))()
+    -- Ejecutar el script de Forsaken OP
 end)
 
 createButton("Brookhaven", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/as6cd0/SP_Hub/refs/heads/main/Brookhaven"))()
+    -- Ejecutar el script de Brookhaven
 end)
 
 createButton("Aimbot", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Aimbot-V2/main/Resources/Scripts/Raw%20Main.lua"))()
+    -- Ejecutar el script de Aimbot
 end)
 
 createButton("Old Animations", function()
-    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Fe-Classic-Animations-2971"))()
+    -- Ejecutar el script de Old Animations
 end)
 
 createButton("¡TROLÉAME!", function()
-    print("¡TROLÉAME activado!")
+    -- Ejecutar el script de Troléame
 end)
 
 createButton("Infinity Yield", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    -- Ejecutar el script de Infinity Yield
 end)
 
 createButton("Forsaken", function()
-    local Sprinting = game:GetService("ReplicatedStorage").Systems.Character.Game.Sprinting
-    local m = require(Sprinting)
-    m.MaxStamina = 300
-    m.StaminaGain = 100
-    m.StaminaLoss = 1
-    m.SprintSpeed = 35
+    -- Ejecutar el script de Forsaken
 end)
 
 createButton("Prison Life", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/elliexmln/PrizzLife/main/pladmin.lua'))()
+    -- Ejecutar el script de Prison Life
 end)
 
 createButton("0 Gravity", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Bac0nHck/Scripts/refs/heads/main/zerogravity"))()
+    -- Ejecutar el script de 0 Gravity
 end)
 
 createButton("Simple Domain", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/gyyfyu/test2/refs/heads/main/no%20key%20system/simple%20domain.lua"))()
+    -- Ejecutar el script de Simple Domain
 end)
 
--- Crear el botón "Invisible"
 createButton("Invisible", function()
-    loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))()
+    -- Ejecutar el script de Invisible
 end)
 
--- Crear el botón "Knife Not FE"
 createButton("Knife Not FE", function()
-    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Grab-knife-v4-24753"))()
+    -- Ejecutar el script de Knife Not FE
 end)
+
+createButton("Speed Button", function()
+    -- Ejecutar el script de Speed Button
+end)
+
+createButton("Ctrl+M1=TP", function()
+    -- Ejecutar el script de Ctrl+M1=TP
+end)
+
+-- Mostrar la GUI
+ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
