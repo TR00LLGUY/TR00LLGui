@@ -1,0 +1,56 @@
+local player = game.Players.LocalPlayer
+local gui = Instance.new("ScreenGui")
+gui.Parent = player.PlayerGui
+local frame = Instance.new("Frame")
+frame.Parent = gui
+frame.Position = UDim2.new(0.5, -200, 0.5, -300) -- Centrado en la pantalla
+frame.Size = UDim2.new(0, 400, 0, 600) -- Tamaño de la ventana
+frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50) -- Fondo gris oscuro
+
+-- Título de la ventana
+local title = Instance.new("TextLabel")
+title.Parent = frame
+title.Position = UDim2.new(0, 0, 0, 0)
+title.Size = UDim2.new(1, 0, 0, 50)
+title.Text = "TR00LL GUI"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.TextSize = 30
+title.Font = Enum.Font.SourceSansBold
+title.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Fondo negro
+
+-- Función para crear botones
+local function createButton(name, position, scriptUrl)
+    local button = Instance.new("TextButton")
+    button.Parent = frame
+    button.Size = UDim2.new(0, 90, 0, 40)
+    button.Position = position
+    button.Text = name
+    button.TextColor3 = Color3.fromRGB(255, 0, 0)
+    button.TextSize = 20
+    button.Font = Enum.Font.SourceSansBold
+    button.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Fondo negro
+    button.MouseButton1Click:Connect(function()
+        loadstring(game:HttpGet(scriptUrl))()  -- Ejecuta el script cuando se presiona el botón
+    end)
+end
+
+-- Botones
+createButton("GhostHub", UDim2.new(0, 0, 0, 60), "https://raw.githubusercontent.com/ghosthub/script/main/ghosthub")
+createButton("SCP 096 FE", UDim2.new(0, 100, 0, 60), "https://raw.githubusercontent.com/zeynwq/main/main/scp096fe")
+createButton("Forsaken OP", UDim2.new(0, 200, 0, 60), "https://raw.githubusercontent.com/zeynwq/main/main/forsakenop")
+createButton("Brookhaven", UDim2.new(0, 0, 0, 110), "https://raw.githubusercontent.com/zeynwq/main/main/brookhaven")
+createButton("Aimbot", UDim2.new(0, 100, 0, 110), "https://raw.githubusercontent.com/zeynwq/main/main/aimbot")
+createButton("Old Animations", UDim2.new(0, 200, 0, 110), "https://raw.githubusercontent.com/zeynwq/main/main/oldanimations")
+createButton("TROLÉAME!", UDim2.new(0, 0, 0, 160), "https://raw.githubusercontent.com/zeynwq/main/main/troleame")
+createButton("Infinity Yield", UDim2.new(0, 100, 0, 160), "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
+createButton("Prison Life", UDim2.new(0, 200, 0, 160), "https://raw.githubusercontent.com/zeynwq/main/main/prisonlife")
+createButton("0 Gravity", UDim2.new(0, 0, 0, 210), "https://raw.githubusercontent.com/zeynwq/main/main/zerogravity")
+createButton("Simple", UDim2.new(0, 100, 0, 210), "https://raw.githubusercontent.com/zeynwq/main/main/simple")
+createButton("Domain", UDim2.new(0, 200, 0, 210), "https://raw.githubusercontent.com/zeynwq/main/main/domain")
+createButton("Invisible", UDim2.new(0, 0, 0, 260), "https://raw.githubusercontent.com/zeynwq/main/main/invisible")
+createButton("Knife", UDim2.new(0, 100, 0, 260), "https://raw.githubusercontent.com/zeynwq/main/main/knife")
+createButton("Not FE", UDim2.new(0, 200, 0, 260), "https://raw.githubusercontent.com/zeynwq/main/main/notfe")
+createButton("Speed Button", UDim2.new(0, 0, 0, 310), "https://raw.githubusercontent.com/zeynwq/main/main/speedbutton")
+createButton("Ctrl+M1=TP", UDim2.new(0, 100, 0, 310), "https://raw.githubusercontent.com/zeynwq/main/main/ctrlm1tp")
+createButton("Rivals", UDim2.new(0, 200, 0, 310), "https://raw.githubusercontent.com/zeynwq/main/main/rivals1") -- Botón Rivals
+createButton("SolarHub V3", UDim2.new(0, 0, 0, 360), "https://cdn.wearedevs.net/scripts/Solara%20Hub%20v3.txt") -- Nuevo botón SolarHub V3
