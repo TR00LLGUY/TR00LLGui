@@ -1,4 +1,4 @@
-# TR00LLGui
+# TR00LLGui Roblox Script
 TR00LLTEAM Gui
 Troll Gui for Roblox
 
