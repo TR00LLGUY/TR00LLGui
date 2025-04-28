@@ -1,0 +1,90 @@
+local player = game.Players.LocalPlayer
+local gui = Instance.new("ScreenGui")
+gui.Parent = player.PlayerGui
+local frame = Instance.new("Frame")
+frame.Parent = gui
+frame.Position = UDim2.new(0, 0, 0.5, 0) -- Posicion
+frame.Size = UDim2.new(0, 400, 0, 600) -- Tamaño de la GUI
+frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Fondo
+
+-- Título de la GUI
+local title = Instance.new("TextLabel")
+title.Parent = frame
+title.Position = UDim2.new(0, 0, 0, 0)
+title.Size = UDim2.new(1, 0, 0, 50)
+title.Text = "TR00LL GUI By TR00LLTEAM"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.TextSize = 30
+title.Font = Enum.Font.SourceSansBold
+title.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Fondo negro
+
+
+-- Función para crear botones
+local function createButton(name, position, scriptUrl)
+    local button = Instance.new("TextButton")
+    button.Parent = frame
+    button.Size = UDim2.new(0, 90, 0, 40)
+    button.Position = position
+    button.Text = name
+    button.TextColor3 = Color3.fromRGB(255, 0, 0)
+    button.TextSize = 20
+    button.Font = Enum.Font.SourceSansBold
+    button.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Fondo negro
+    button.MouseButton1Click:Connect(function()
+        loadstring(game:HttpGet(scriptUrl))()  -- Ejecuta el script cuando se presiona el botón
+    end)
+end
+
+-- Botones
+createButton("Speed Buton", UDim2.new(0, 0, 0, 60), "local player = game.Players.LocalPlayer
+    local gui = Instance.new("ScreenGui")
+    gui.Parent = player.PlayerGui
+    local button = Instance.new("TextButton")
+    button.Parent = gui
+    button.Position = UDim2.new(0, 0, 0, 0)
+    button.Size = UDim2.new(0, 100, 0, 50)
+    button.Text = "Walk Fast"
+    button.MouseButton1Click:Connect(function()
+        player.Character.Humanoid.WalkSpeed = player.Character.Humanoid.WalkSpeed + 10
+    end)")
+createButton("SCP 096 FE", UDim2.new(0, 100, 0, 60), "loadstring(game:HttpGet("https://pastefy.app/YsJgITXR/raw"))()")
+createButton("Brookhaven", UDim2.new(0, 0, 0, 110), "loadstring(game:HttpGet("https://raw.githubusercontent.com/as6cd0/SP_Hub/refs/heads/main/Brookhaven"))()")
+createButton("Aimbot", UDim2.new(0, 100, 0, 110), " loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Aimbot-V2/main/Resources/Scripts/Raw%20Main.lua"))()")
+createButton("Old Animations", UDim2.new(0, 200, 0, 110), "loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Fe-Classic-Animations-2971"))()")
+createButton("Infinity Yield", UDim2.new(0, 100, 0, 160), "loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()")
+createButton("Prison Life", UDim2.new(0, 200, 0, 160), "loadstring(game:HttpGet('https://raw.githubusercontent.com/elliexmln/PrizzLife/main/pladmin.lua'))()")
+createButton("0 Gravity", UDim2.new(0, 0, 0, 210), "loadstring(game:HttpGet("https://raw.githubusercontent.com/Bac0nHck/Scripts/refs/heads/main/zerogravity"))()")
+createButton("Invisible", UDim2.new(0, 0, 0, 260), "loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))()")
+createButton("Ctrl+M1=TP", UDim2.new(0, 100, 0, 310), "if _G.SVTClickTeleport == nil then
+            _G.SVTClickTeleport = true
+
+            local player = game:GetService("Players").LocalPlayer
+            local UserInputService = game:GetService("UserInputService")
+
+            local mouse = player:GetMouse()
+
+            repeat wait() until mouse
+
+            UserInputService.InputBegan:Connect(function(input, gameProcessed)
+                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+
+                    if _G.SVTClickTeleport and UserInputService:IsKeyDown(Enum.KeyCode.LeftControl) then
+                        player.Character:MoveTo(Vector3.new(mouse.Hit.x, mouse.Hit.y, mouse.Hit.z)) 
+                    end
+                end
+            end)
+
+        else 
+        _G.SVTClickTeleport = not _G.SVTClickTeleport
+
+            if _G.SVTClickTeleport then
+                game.StarterGui:SetCore("SendNotification", {Title="Soviet Scripts"; Text="Click teleport enabled"; Duration=5;})
+            else
+                game.StarterGui:SetCore("SendNotification", {Title="Soviet Scripts"; Text="Click teleport disabled"; Duration=5;})
+            end
+        end
+
+        --Script by Soviet no Fake-- 
+")
+createButton("Rivals", UDim2.new(0, 200, 0, 310), "loadstring(game:HttpGet("https://raw.githubusercontent.com/zeynwq/main/main/rivals1"))()()")
+createButton("SolarHub V3", UDim2.new(0, 0, 0, 360), "loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Solara%20Hub%20v3.txt"))()")
